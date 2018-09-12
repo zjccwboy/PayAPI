@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/md5.js" type="text/javascript"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <title>瀚银-宏泰-余额查询</title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 50%;
+        }
+
+        .auto-style2 {
+            text-align: right;
+        }
+
+        #Select1 {
+            width: 142px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            var x = 12;
+            var y = 0;
+            var rand = parseInt(Math.random() * (x - y + 1) + y);
+            $("#nonceStr").val(rand);
+            $("#Btnsub").click(function () {
+                var signaStr = $("#insCode").val() + "|" + $("#insMerchantCode").val() + "|" + $("#hpMerCode").val() + "|" + $("#accountType").val() + "|" + $("#nonceStr").val() + "|" + $("#signKey").val();
+                $("#signature").val(hex_md5(signaStr));
+            });
+        })
+    </script>
+</head>
+<body>
+    <h2>天下付-宏泰-余额查询</h2>
+    <form id="form1" action="http://180.168.61.86:27380/hpayTransGatewayWeb/trans/df/queryAccount.htm" method="post" runat="server">
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style2">机构号</td>
+                <td>
+                    <input id="insCode" name="insCode" type="text" value="80000384" />
+                </td>
+            </tr>
+            <tr style="display:none">
+                <td class="auto-style2">机构商户编号</td>
+                <td>
+                    <input id="insMerchantCode" name="insMerchantCode" value="887581298600467" type="text" />
+                </td>
+            </tr>
+            <tr style="display:none">
+                <td class="auto-style2">KEY</td>
+                <td>
+                    <input id="signKey" name="signKey" value="3F7DB75AFBE34A4B40ECD0CC4A8B6492" type="text" />
+                </td>
+            </tr>
+            <tr style="display:none">
+                <td class="auto-style2">瀚银商户号</td>
+                <td>
+                    <input id="hpMerCode" name="hpMerCode" value="WKJGWKQTCS@20180813173307" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">账户类型</td>
+                <td>
+                    <select id="accountType" name="accountType">
+                        <option title="DT">DT</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">随机参数</td>
+                <td><input id="nonceStr" name="nonceStr" type="text" /></td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;<input id="signature" name="signature" type="hidden" /></td>
+                <td><input id="Btnsub" type="submit" value="查询" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestKLTPay", "TestKLTPay\TestKLTPay.csproj", "{315E19F9-B6F1-4501-BD3D-B29F4C453AFD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{50FB3DE3-2192-44A1-BEBF-5B5B80CCE5F7} = {50FB3DE3-2192-44A1-BEBF-5B5B80CCE5F7}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdParty_KLPPay", "ThirdParty_KLPPay\ThirdParty_KLPPay.csproj", "{50FB3DE3-2192-44A1-BEBF-5B5B80CCE5F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{315E19F9-B6F1-4501-BD3D-B29F4C453AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{315E19F9-B6F1-4501-BD3D-B29F4C453AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{315E19F9-B6F1-4501-BD3D-B29F4C453AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{315E19F9-B6F1-4501-BD3D-B29F4C453AFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50FB3DE3-2192-44A1-BEBF-5B5B80CCE5F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50FB3DE3-2192-44A1-BEBF-5B5B80CCE5F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50FB3DE3-2192-44A1-BEBF-5B5B80CCE5F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50FB3DE3-2192-44A1-BEBF-5B5B80CCE5F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3898F84-1E46-4B7D-86F1-9F5B3BDEC9BD}
+	EndGlobalSection
+EndGlobal

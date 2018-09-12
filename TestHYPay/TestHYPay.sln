@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHYPay", "TestHYPay\TestHYPay.csproj", "{40607DD9-EE02-4647-9688-406EBCD6A209}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHYPayWinForm", "TestHYPayWinForm\TestHYPayWinForm.csproj", "{F46F1D32-3A0C-480D-B800-8B45868BE117}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestHYPayWeb", "TestHYPayWeb\TestHYPayWeb.csproj", "{83F190D8-FCF0-4435-9F3D-A3CEED3CA2B6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0A247433-E8EB-4DF8-8472-3F7ADDDEEFCD} = {0A247433-E8EB-4DF8-8472-3F7ADDDEEFCD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{0A247433-E8EB-4DF8-8472-3F7ADDDEEFCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HYPayInquirer", "HYPayInquirer\HYPayInquirer.csproj", "{D4013B9A-7D57-4240-8389-21754EB36F5B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0A247433-E8EB-4DF8-8472-3F7ADDDEEFCD} = {0A247433-E8EB-4DF8-8472-3F7ADDDEEFCD}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40607DD9-EE02-4647-9688-406EBCD6A209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40607DD9-EE02-4647-9688-406EBCD6A209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40607DD9-EE02-4647-9688-406EBCD6A209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40607DD9-EE02-4647-9688-406EBCD6A209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F46F1D32-3A0C-480D-B800-8B45868BE117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F46F1D32-3A0C-480D-B800-8B45868BE117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F46F1D32-3A0C-480D-B800-8B45868BE117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F46F1D32-3A0C-480D-B800-8B45868BE117}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83F190D8-FCF0-4435-9F3D-A3CEED3CA2B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F190D8-FCF0-4435-9F3D-A3CEED3CA2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83F190D8-FCF0-4435-9F3D-A3CEED3CA2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83F190D8-FCF0-4435-9F3D-A3CEED3CA2B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A247433-E8EB-4DF8-8472-3F7ADDDEEFCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A247433-E8EB-4DF8-8472-3F7ADDDEEFCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A247433-E8EB-4DF8-8472-3F7ADDDEEFCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A247433-E8EB-4DF8-8472-3F7ADDDEEFCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4013B9A-7D57-4240-8389-21754EB36F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4013B9A-7D57-4240-8389-21754EB36F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4013B9A-7D57-4240-8389-21754EB36F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4013B9A-7D57-4240-8389-21754EB36F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAA1FF80-F50F-4903-91C0-89D0794DA184}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,215 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="anonymous">
+    <title>locstorage</title>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            try {
+                ReadCookie();
+            }
+            catch (e) {
+                console.log("storageFaild: " + e);
+            }
+        }
+
+        //读取Cookie并设置控件的值
+        function ReadCookie() {
+            var path = GetUrlRelativePath();
+            var key = path + "check";
+            var value = getCookie(key);
+            if (value == null) 
+
+                value = "1";
+            var check = value == "1" ? true : false;
+            checkbox = document.getElementById('testCheck');
+            checkbox.checked = check;
+
+            key = path + "number";
+            var number = getCookie(key);
+            document.getElementById('testText').value = GetHideNumber(number);
+            document.getElementById('testHidden').value = number;
+        }
+
+        //隐藏卡号中间的数字，只显示前4位与后4位，中间显示******号，例如1234******5678
+        function GetHideNumber(number) {
+            if (number.length <= 10)
+                return '';
+
+            var left = number.substring(0, 4);
+            var right = number.substring(number.length - 4, number.length);
+
+            return left + "******" + right;
+        }
+
+        //获取url完整路径并去掉?号后面的参数
+        function GetUrlRelativePath() {
+            var url = window.location.href;
+            if (url.indexOf("?") != -1) {
+                url = url.split("?")[0];
+            }
+            return url;
+        }
+
+        //提交表单点击事件
+        function OnBtnSub() {
+            try {
+                WriteCookie();
+            }
+            catch (e) {
+                console.log("storageFaild: " + e);
+            }
+        }
+
+        //写Cookies
+        function WriteCookie() {
+
+            checkbox = document.getElementById('testCheck');
+            var check = checkbox.checked;
+            var path = GetUrlRelativePath();
+            var key = path + "check";
+            var value = check == true ? "1" : "0";
+
+            setCookie(key, value, "d30");
+
+            if (check != true)
+                return;
+
+            key = path + "number";
+            value = document.getElementById('testHidden').value;
+            //大于24字节长度的卡号不保存，避免用户恶意写Cookie
+            if (value.length > 24)
+                return;
+
+            setCookie(key, value, "d30");
+        }
+
+        function setCookie(name, value) {
+            var Days = 30;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+        }
+
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+
+            if (arr = document.cookie.match(reg))
+
+                return unescape(arr[2]);
+            else
+                return null;
+        }
+
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null)
+                document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+
+        function setCookie(name, value, time) {
+            var strsec = getsec(time);
+            var exp = new Date();
+            exp.setTime(exp.getTime() + strsec * 1);
+            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+        }
+
+        function getsec(str) {
+            var str1 = str.substring(1, str.length) * 1;
+            var str2 = str.substring(0, 1);
+            if (str2 == "s") {
+                return str1 * 1000;
+            }
+            else if (str2 == "h") {
+                return str1 * 60 * 60 * 1000;
+            }
+            else if (str2 == "d") {
+                return str1 * 24 * 60 * 60 * 1000;
+            }
+        }
+
+        //用户输入Text的值发生改变时更新表单中的银行卡号
+        function OnKeyUp() {
+
+            textbox = document.getElementById('testText');
+            var number = textbox.value;
+            number = SpaceString(number);
+            textbox.value = number;
+
+            document.getElementById('testHidden').value = GetOriginString(number);
+        }
+
+        //用空格隔开字符串
+        function SpaceString(number) {
+
+            if (number.length <= 4)
+                return number;
+
+            var list = number.split(' ');
+            var last = list[list.length - 1];
+            if (last.length <= 4)
+                return number;
+
+            var result = '';
+            for (var i = 0; i < list.length - 1; i++) {
+                var temp = list[i];
+                if (temp == ' ')//去掉空格
+                    continue;
+
+                if(i == 0)
+                    result = temp;
+                else
+                    result = result + ' ' + temp;
+            }
+
+            var str = last.substring(0, 4);
+            var result = result + ' ' + str + ' ' + last.substring(4, last.length);
+
+            return SpaceString(result);
+        }
+
+        //获取原始字符串，没有空格隔开字符串
+        function GetOriginString(number) {
+            var list = number.split(' ');
+
+            var result = '';
+            for (var i = 0; i < list.length; i++) {
+                var temp = list[i];
+                if (temp == ' ')//去掉空格
+                    continue;
+
+                result += temp;
+            }
+
+            return result;
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>卡号</td>
+                <td>
+                    <input id="testText" type="text" onkeyup="OnKeyUp()">
+                    <input id="testHidden" type="hidden" name="testHidden">
+                    <input type="checkbox" id="testCheck" checked="checked" />
+                    <label>保存卡号</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>提交</td>
+                <td>
+                    <button type="button" onclick="OnBtnSub()">测试</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
