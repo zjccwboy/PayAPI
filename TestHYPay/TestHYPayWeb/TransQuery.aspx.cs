@@ -22,7 +22,7 @@ namespace TestHYPayWeb
             TransQueryModel.insCode = PayConfig.insCode;
             TransQueryModel.insMerchantCode = PayConfig.insMerchantCode;
             TransQueryModel.hpMerCode = PayConfig.hpMerCode;
-            TransQueryModel.transDate = DateTime.Now.ToString("yyyyMMdd");
+            TransQueryModel.transDate = Request.Form["transDate"];
             TransQueryModel.transSeq = "";
             TransQueryModel.productType = PayConfig.productType;
             TransQueryModel.paymentType = PayConfig.paymentType;

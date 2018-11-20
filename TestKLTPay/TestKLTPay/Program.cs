@@ -17,7 +17,7 @@ namespace TestKLTPay
             //TestQuickPay.StartTest();
 
             //单笔代付
-            SingleDFPayTest.StartTest();
+            //SingleDFPayTest.StartTest();
 
             //单笔代付查询
             SingleDFQueryTest.StartTest();

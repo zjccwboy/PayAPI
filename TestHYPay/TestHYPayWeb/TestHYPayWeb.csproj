@@ -77,6 +77,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DFOrderQuery.aspx" />
+    <Content Include="DFOrderQuery.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="DfTansPay.aspx" />
     <Content Include="DFTransPay.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -104,6 +108,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\PayConfig.cs" />
+    <Compile Include="DFOrderQuery.aspx.cs">
+      <DependentUpon>DFOrderQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DFOrderQuery.aspx.designer.cs">
+      <DependentUpon>DFOrderQuery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DfTansPay.aspx.cs">
       <DependentUpon>DfTansPay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

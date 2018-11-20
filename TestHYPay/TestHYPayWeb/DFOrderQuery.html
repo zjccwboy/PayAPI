@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>代付订单结果查询</title>
+    <script>
+        window.onload = selectShow;
+        function selectShow() {
+            document.getElementById("accountType").value = document.getElementById("slList").value;
+        }
+    </script>
+</head>
+<body>
+    <h2>代付订单结果查询</h2>
+    <form action="/DFOrderQuery.aspx" method="post">
+        <table>
+            <tr>
+                <td>订单号</td>
+                <td>
+                    <input type="text" id="orderNo" name="orderNo" />
+                </td>
+            </tr>
+            <tr>
+                <td>订单流水号</td>
+                <td>
+                    <input type="text" id="transSeq" name="transSeq" />
+                </td>
+            </tr>
+            <tr>
+                <td>订单时间</td>
+                <td>
+                    <input type="text" id="transDate" name="transDate" />
+                </td>
+            </tr>
+            <tr>
+                <td>订单类型</td>
+                <td>
+                    <input id="accountType" type="text" name="accountType" />
+                    <select id="slList" onchange="selectShow()">
+                        <option value="D0">D0</option>
+                        <option value="T1">T1</option>
+                        <option value="DT">DT</option>
+                        <option value="DF">DF</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>提交</td>
+                <td>
+                    <input type="submit" value="代付订单结果查询" />
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>

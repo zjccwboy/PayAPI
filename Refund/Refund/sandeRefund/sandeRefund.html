@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        window.onload = selectAccessType;
+        window.onload = selectProductId;
+        function selectAccessType() {
+            document.getElementById("accessType").value = document.getElementById("accessTypeList").value;
+        }
+
+        function selectProductId() {
+            document.getElementById("productId").value = document.getElementById("productIdList").value;
+        }
+    </script>
+</head>
+<body>
+    <form action="sandeRefund.aspx" method="post">
+        <table>
+            <tr>
+                <td>商户Id</td>
+                <td><input id="mid" type="text" name="mid"></td>
+            </tr>
+            <tr>
+                <td>台商户接入方式</td>
+                <td>
+                    <input id="accessType" type="hidden" name="accessType" />
+                    <select id="accessTypeList" onchange="selectAccessType()">
+                        <option value="1">普通商户接入</option>
+                        <option value="2">平台商户接入</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+            <tr>
+                <td>平台ID 接入类型为平台商户时必填</td>
+                <td><input id="plMid" type="text" name="plMid" /></td>
+            </tr>
+            <tr>
+                <td>原订单订单号</td>
+                <td><input id="oriOrderCode" type="text" name="oriOrderCode" /></td>
+            </tr>
+            <tr>
+                <td>退款金额</td>
+                <td><input id="refundAmount" type="text" name="refundAmount" /></td>
+            </tr>
+            <tr>
+                <td>证书密码</td>
+                <td><input id="pfxPassword" type="text" name="pfxPassword" /></td>
+            </tr>
+            <tr>
+                <td>产品类型</td>
+                <td>
+                    <input id="productId" type="hidden" name="productId" />
+                    <select id="productIdList" onchange="selectProductId()">
+                        <option value="00000016">一键快捷</option>
+                        <option value="00000017">标准绑卡快捷</option>
+                        <option value="00000018">后台绑卡快捷</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>提交</td>
+                <td><input type="submit" /></td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+</html>
