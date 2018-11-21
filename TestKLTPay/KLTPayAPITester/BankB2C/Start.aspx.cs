@@ -11,9 +11,11 @@ namespace KLTPayAPITester.BankB2C
     public partial class Start : System.Web.UI.Page
     {
         public string orderNumber { get; set; }
+        public string orderDate { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             this.orderNumber = GuidUtils.GetLongStringGuid();
+            this.orderDate = DateTime.Now.ToString("yyyyMMdd");
         }
     }
 }

@@ -11,7 +11,7 @@ namespace KLTPayAPITester.SingleDF
 {
 
 
-    public partial class Start
+    public partial class notifyUrl
     {
 
         /// <summary>

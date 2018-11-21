@@ -30,6 +30,18 @@
                 </td>
             </tr>
             <tr>
+                <td>测试商户号</td>
+                <td>
+                    <input type="text" id="merchantId" name="merchantId" value="903110153110001"/>
+                </td>
+            </tr>
+            <tr>
+                <td>订单日期</td>
+                <td>
+                    <input type="text" id="orderDate" name="orderDate" value="<% =orderDate%>"/>
+                </td>
+            </tr>
+            <tr>
                 <td>提交</td>
                 <td>
                     <input type="submit" value="提交" />

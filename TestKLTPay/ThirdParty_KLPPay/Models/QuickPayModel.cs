@@ -19,16 +19,16 @@ namespace ThirdParty_KLPPay.Models
         public string orderNo { get; set; }
         public string productId { get; set; }
         public int orderCurrency { get; set; }
-        public int productNum { get; set; }
+        public int? productNum { get; set; }
         public string smsCode { get; set; }
-        public int orderExpireDatetime { get; set; }
+        public int? orderExpireDatetime { get; set; }
         public string productName { get; set; }
         public string productDesc { get; set; }
         public string orderDatetime { get; set; }
         public int orderAmount { get; set; }
         public string acctValiddate { get; set; }
         public string originalRequestId { get; set; }
-        public int productPrice { get; set; }
+        public int? productPrice { get; set; }
         public string pickupUrl { get; set; }
         public string cvv2 { get; set; }
         public string receiveUrl { get; set; }

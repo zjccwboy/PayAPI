@@ -19,18 +19,19 @@ namespace KLTPayAPITester.BankB2C
 
             var orderAmount = Request.Form["orderAmount"];
             var productName = Request.Form["productName"];
+            var merchantId = Request.Form["merchantId"];
 
             this.PayGateWayPCModel.head = new PayGateWayPCHead
             {
-                merchantId = "903110153110001",
+                merchantId = merchantId,
                 signType = "1",
                 version = "18",
             };
 
             this.PayGateWayPCModel.content = new PayGateWayPContent
             {
-                pickupUrl = "http://47.92.68.54/BankB2C/pickupUrl.aspx",
-                receiveUrl = "http://47.92.68.54/BankB2C/receiveUrl.aspx",
+                pickupUrl = "http://47.92.68.54:8002/BankB2C/pickupUrl.aspx",
+                receiveUrl = "http://47.92.68.54:8002/BankB2C/receiveUrl.aspx",
                 orderNo = GuidUtils.GetLongStringGuid(),
                 orderAmount = int.Parse(orderAmount),
                 orderCurrency = 156,

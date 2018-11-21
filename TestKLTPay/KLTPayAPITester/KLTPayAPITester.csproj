@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>KLTPayAPITester</RootNamespace>
     <AssemblyName>KLTPayAPITester</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,22 +49,21 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -79,9 +79,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="QuitPay\QuitPay.aspx" />
+    <Content Include="QuitPay\receiveUrl.aspx" />
     <Content Include="QuitPay\Start.aspx" />
+    <Content Include="SingleDF\notifyUrl.aspx" />
     <Content Include="SingleDF\SingleDF.aspx" />
-    <Content Include="SingleDF\SingleDF.html" />
     <Content Include="SingleDF\Start.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -110,6 +111,13 @@
     <Compile Include="QuitPay\QuitPay.aspx.designer.cs">
       <DependentUpon>QuitPay.aspx</DependentUpon>
     </Compile>
+    <Compile Include="QuitPay\receiveUrl.aspx.cs">
+      <DependentUpon>receiveUrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuitPay\receiveUrl.aspx.designer.cs">
+      <DependentUpon>receiveUrl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="QuitPay\Start.aspx.cs">
       <DependentUpon>Start.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -117,23 +125,25 @@
     <Compile Include="QuitPay\Start.aspx.designer.cs">
       <DependentUpon>Start.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SingleDF\notifyUrl.aspx.cs">
+      <DependentUpon>notifyUrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SingleDF\notifyUrl.aspx.designer.cs">
+      <DependentUpon>notifyUrl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SingleDF\SingleDF.aspx.cs">
       <DependentUpon>SingleDF.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SingleDF\SingleDF.aspx.designer.cs">
-      <DependentUpon>SingleDF.aspx</DependentUpon>
     </Compile>
     <Compile Include="SingleDF\Start.aspx.cs">
       <DependentUpon>Start.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SingleDF\Start.aspx.designer.cs">
-      <DependentUpon>Start.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
