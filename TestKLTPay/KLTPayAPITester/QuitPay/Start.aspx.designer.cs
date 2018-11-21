@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KLTPayAPITester.BankB2C
+namespace KLTPayAPITester.QuitPay
 {
 
 
-    public partial class BankB2C
+    public partial class Start
     {
 
         /// <summary>

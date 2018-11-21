@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KLTPayAPITester.QuitPay
+namespace KLTPayAPITester.SingleDF
 {
 
 
-    public partial class QuitPay
+    public partial class Start
     {
 
         /// <summary>

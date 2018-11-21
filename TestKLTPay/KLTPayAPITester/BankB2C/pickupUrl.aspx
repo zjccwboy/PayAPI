@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="QuitPay.aspx.cs" Inherits="KLTPayAPITester.QuitPay.QuitPay" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pickupUrl.aspx.cs" Inherits="KLTPayAPITester.BankB2C.pickupUrl" %>
 
 <!DOCTYPE html>
 

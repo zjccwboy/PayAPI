@@ -39,8 +39,8 @@ namespace ThirdParty_KLPPay.Models
         public string productDesc { get; set; }
         public string productId { get; set; }
         public string productName { get; set; }
-        public int productNum { get; set; }
-        public decimal productPrice { get; set; }
+        public int? productNum { get; set; }
+        public decimal? productPrice { get; set; }
         public string receiveUrl { get; set; }
         public string termId { get; set; }
     }

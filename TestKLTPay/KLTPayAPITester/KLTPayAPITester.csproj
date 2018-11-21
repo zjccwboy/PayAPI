@@ -45,6 +45,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -69,11 +72,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BankB2C\BankB2C.aspx" />
-    <Content Include="BankB2C\BankB2C.html" />
+    <Content Include="BankB2C\pickupUrl.aspx" />
+    <Content Include="BankB2C\receiveUrl.aspx" />
+    <Content Include="BankB2C\Start.aspx" />
+    <Content Include="Index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="QuitPay\QuitPay.aspx" />
-    <Content Include="QuitPay\QuitPay.html" />
+    <Content Include="QuitPay\Start.aspx" />
     <Content Include="SingleDF\SingleDF.aspx" />
     <Content Include="SingleDF\SingleDF.html" />
+    <Content Include="SingleDF\Start.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -81,8 +90,17 @@
       <DependentUpon>BankB2C.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BankB2C\BankB2C.aspx.designer.cs">
-      <DependentUpon>BankB2C.aspx</DependentUpon>
+    <Compile Include="BankB2C\pickupUrl.aspx.cs">
+      <DependentUpon>pickupUrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankB2C\receiveUrl.aspx.cs">
+      <DependentUpon>receiveUrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankB2C\Start.aspx.cs">
+      <DependentUpon>Start.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuitPay\QuitPay.aspx.cs">
@@ -92,12 +110,26 @@
     <Compile Include="QuitPay\QuitPay.aspx.designer.cs">
       <DependentUpon>QuitPay.aspx</DependentUpon>
     </Compile>
+    <Compile Include="QuitPay\Start.aspx.cs">
+      <DependentUpon>Start.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuitPay\Start.aspx.designer.cs">
+      <DependentUpon>Start.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SingleDF\SingleDF.aspx.cs">
       <DependentUpon>SingleDF.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SingleDF\SingleDF.aspx.designer.cs">
       <DependentUpon>SingleDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SingleDF\Start.aspx.cs">
+      <DependentUpon>Start.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SingleDF\Start.aspx.designer.cs">
+      <DependentUpon>Start.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
