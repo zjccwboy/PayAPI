@@ -11,7 +11,8 @@ namespace KLTPayAPITester.BankB2C
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Write("success");
+            Response.End();
         }
     }
 }

@@ -11,7 +11,8 @@ namespace KLTPayAPITester.QuitPay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Write("success");
+            Response.End();
         }
     }
 }

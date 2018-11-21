@@ -108,15 +108,9 @@
       <DependentUpon>QuitPay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="QuitPay\QuitPay.aspx.designer.cs">
-      <DependentUpon>QuitPay.aspx</DependentUpon>
-    </Compile>
     <Compile Include="QuitPay\receiveUrl.aspx.cs">
       <DependentUpon>receiveUrl.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="QuitPay\receiveUrl.aspx.designer.cs">
-      <DependentUpon>receiveUrl.aspx</DependentUpon>
     </Compile>
     <Compile Include="QuitPay\Start.aspx.cs">
       <DependentUpon>Start.aspx</DependentUpon>
@@ -128,9 +122,6 @@
     <Compile Include="SingleDF\notifyUrl.aspx.cs">
       <DependentUpon>notifyUrl.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SingleDF\notifyUrl.aspx.designer.cs">
-      <DependentUpon>notifyUrl.aspx</DependentUpon>
     </Compile>
     <Compile Include="SingleDF\SingleDF.aspx.cs">
       <DependentUpon>SingleDF.aspx</DependentUpon>

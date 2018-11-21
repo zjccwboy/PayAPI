@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="receiveUrl.aspx.cs" Inherits="KLTPayAPITester.BankB2C.receiveUrl" %>
+﻿<%@ Page Language="C#" enableViewStateMac="false" AutoEventWireup="true" CodeBehind="receiveUrl.aspx.cs" Inherits="KLTPayAPITester.BankB2C.receiveUrl" %>
 
 <!DOCTYPE html>
 

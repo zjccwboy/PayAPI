@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="notifyUrl.aspx.cs" Inherits="KLTPayAPITester.SingleDF.notifyUrl" %>
+﻿<%@ Page Language="C#" enableViewStateMac="false" AutoEventWireup="true" CodeBehind="notifyUrl.aspx.cs" Inherits="KLTPayAPITester.SingleDF.notifyUrl" %>
 
 <!DOCTYPE html>
 

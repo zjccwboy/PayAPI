@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SingleDF.aspx.cs" Inherits="KLTPayAPITester.SingleDF.SingleDF" %>
+﻿<%@ Page Language="C#" enableViewStateMac="false" AutoEventWireup="true" CodeBehind="SingleDF.aspx.cs" Inherits="KLTPayAPITester.SingleDF.SingleDF" %>
 
 <!DOCTYPE html>
 
