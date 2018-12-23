@@ -104,6 +104,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="libman.json" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">

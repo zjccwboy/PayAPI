@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
+using System.Xml.XPath;
 
 namespace TianXiaPay
 {
@@ -47,13 +51,36 @@ namespace TianXiaPay
             return result;
         }
 
-        public string GetRefundResult(QuickRefundRequestModel request)
+        public string GetRefundResult(string encData)
         {
-            var data = this.GenerateRequestFormString(request);
             var webClient = new WebClient();
-            var result = webClient.UploadString(this.Url, data);
-            result = Encoding.UTF8.GetString(Encoding.GetEncoding("GB2312").GetBytes(result));
-            return result;
+            var response = webClient.UploadString(this.Url, "POST", $"cipher_data={encData}");
+            return response;
         }
+
+        //private string HttpPost(string POSTURL, string PostData)
+        //{
+        //    //发送请求的数据
+        //    HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(POSTURL);
+        //    myHttpWebRequest.Method = "POST";
+        //    myHttpWebRequest.UserAgent = "chrome";
+        //    UTF8Encoding encoding = new UTF8Encoding();
+        //    byte[] byte1 = encoding.GetBytes(PostData);
+        //    myHttpWebRequest.ContentType = "application/x-www-form-urlencoded";
+        //    myHttpWebRequest.ContentLength = byte1.Length;
+        //    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;
+        //    Stream newStream = myHttpWebRequest.GetRequestStream();
+        //    newStream.Write(byte1, 0, byte1.Length);
+        //    newStream.Close();
+
+        //    //发送成功后接收返回的信息
+        //    HttpWebResponse response = (HttpWebResponse)myHttpWebRequest.GetResponse();
+        //    string lcHtml = string.Empty;
+        //    Encoding enc = Encoding.GetEncoding("UTF-8");
+        //    Stream stream = response.GetResponseStream();
+        //    StreamReader streamReader = new StreamReader(stream, enc);
+        //    lcHtml = streamReader.ReadToEnd();
+        //    return lcHtml;
+        //}
     }
 }
