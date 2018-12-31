@@ -63,7 +63,7 @@ C5yhJD/WdHvYkWKv";
             var cipher_data = Server.UrlEncode(encData);
 
             var response = factory.GetRefundResult(cipher_data);
-            var model = FormatResponse(response);
+            var model = DeserializeResponse(response);
 
             var settings = new Newtonsoft.Json.JsonSerializerSettings
             {
@@ -91,8 +91,7 @@ C5yhJD/WdHvYkWKv";
             public string retmsg { get; set; }
             public string cipher_data { get; set; }
         }
-
-        private ResponseModel FormatResponse(string rpXml)
+        private ResponseModel DeserializeResponse(string rpXml)
         {
             var result = new ResponseModel();
             using (var sr = new StringReader(rpXml))
